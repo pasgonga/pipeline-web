@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /memory/
+Disallow: /.claude/
+
+Sitemap: https://pasgonga.github.io/pipeline-web/sitemap.xml

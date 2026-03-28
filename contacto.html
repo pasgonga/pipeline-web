@@ -7,7 +7,10 @@
   <meta name="description" content="Contacta con Pipeline Software. Castellón de la Plana, España. Software para agencias de viajes desde 1989.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
   <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="canonical" href="https://pasgonga.github.io/pipeline-web/contacto.html">
   <title>Contacto · Pipeline Software</title>
 </head>
 
@@ -93,7 +96,12 @@
             <p class="s-eyebrow">Escríbenos</p>
             <h2 class="s-title" style="font-size:var(--text-xl);margin-bottom:var(--space-sm);">Formulario de contacto</h2>
 
-            <form class="demo-form" action="#" method="post" novalidate aria-label="Formulario de contacto">
+            <form class="demo-form" action="https://api.web3forms.com/submit" method="POST" novalidate id="contacto-form" aria-label="Formulario de contacto">
+              <!-- Web3Forms: obtén tu access_key gratuito en https://web3forms.com -->
+              <input type="hidden" name="access_key" value="TU_ACCESS_KEY_AQUÍ">
+              <input type="hidden" name="subject" value="Contacto · Pipeline Software">
+              <input type="hidden" name="from_name" value="Pipeline Software Web">
+              <input type="hidden" name="redirect" value="https://pasgonga.github.io/pipeline-web/contacto.html?enviado=1">
 
               <div class="form-row">
                 <div class="form-group">
@@ -128,9 +136,14 @@
                 <textarea id="cnt-mensaje" name="mensaje" placeholder="¿En qué podemos ayudarte?" required style="min-height:130px;"></textarea>
               </div>
 
-              <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:1rem;">
+              <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:1rem;" id="btn-submit-contacto">
                 Enviar mensaje
               </button>
+
+              <div id="form-success-contacto" style="display:none;background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:1.25rem;text-align:center;margin-top:1rem;">
+                <p style="color:#166534;font-weight:600;margin-bottom:0.25rem;">✓ Mensaje recibido</p>
+                <p style="color:#166534;font-size:0.875rem;">Te contactaremos en menos de 24 horas hábiles.</p>
+              </div>
 
               <p class="form-note">
                 Al enviar este formulario aceptas nuestra
@@ -162,6 +175,20 @@
 
 
   </main>
+
+  <script>
+    // Mostrar mensaje de éxito si la URL contiene ?enviado=1
+    if (window.location.search.includes('enviado=1')) {
+      const success = document.getElementById('form-success-contacto');
+      const btn = document.getElementById('btn-submit-contacto');
+      const form = document.getElementById('contacto-form');
+      if (success) success.style.display = 'block';
+      if (btn) btn.style.display = 'none';
+      if (form) {
+        Array.from(form.elements).forEach(el => { if (el.type !== 'hidden') el.disabled = true; });
+      }
+    }
+  </script>
 
   <div id="footer-root"></div>
   <script src="assets/js/components.js"></script>

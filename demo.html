@@ -5,9 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Solicita una demostración de Orbis Suite. Te mostramos cómo encaja en la operativa de tu agencia. Sin presión comercial, sin compromiso.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Solicitar demostración · Pipeline Software">
+  <meta property="og:description" content="Solicita una demostración de Orbis Suite. Te mostramos cómo encaja en la operativa de tu agencia. Sin presión comercial.">
+  <meta property="og:url" content="https://pasgonga.github.io/pipeline-web/demo.html">
+  <meta property="og:locale" content="es_ES">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
   <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="canonical" href="https://pasgonga.github.io/pipeline-web/demo.html">
   <title>Solicitar demostración · Pipeline Software</title>
 </head>
 
@@ -50,8 +58,13 @@
           </p>
         </div>
 
-        <!-- Formulario principal — HTML estático, sin backend -->
-        <form class="demo-form" action="#" method="post" novalidate aria-label="Formulario de solicitud de demostración">
+        <!-- Formulario principal — conectado a Web3Forms -->
+        <form class="demo-form" action="https://api.web3forms.com/submit" method="POST" novalidate id="demo-form" aria-label="Formulario de solicitud de demostración">
+          <!-- Web3Forms: obtén tu access_key gratuito en https://web3forms.com -->
+          <input type="hidden" name="access_key" value="TU_ACCESS_KEY_AQUÍ">
+          <input type="hidden" name="subject" value="Solicitud de demostración · Pipeline Software">
+          <input type="hidden" name="from_name" value="Pipeline Software Web">
+          <input type="hidden" name="redirect" value="https://pasgonga.github.io/pipeline-web/demo.html?enviado=1">
 
           <div class="form-row">
             <div class="form-group">
@@ -134,9 +147,14 @@
             <textarea id="mensaje" name="mensaje" placeholder="Describe brevemente vuestra operativa actual, los sistemas que usáis o cualquier duda específica…"></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:1rem;">
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:1rem;" id="btn-submit-demo">
             Enviar solicitud de demostración
           </button>
+
+          <div id="form-success" style="display:none;background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:1.25rem;text-align:center;margin-top:1rem;">
+            <p style="color:#166534;font-weight:600;margin-bottom:0.25rem;">✓ Solicitud recibida</p>
+            <p style="color:#166534;font-size:0.875rem;">Te contactaremos en menos de 24 horas hábiles.</p>
+          </div>
 
           <p class="form-note">
             Al enviar este formulario aceptas nuestra
@@ -193,6 +211,20 @@
 
 
   </main>
+
+  <script>
+    // Mostrar mensaje de éxito si la URL contiene ?enviado=1
+    if (window.location.search.includes('enviado=1')) {
+      const success = document.getElementById('form-success');
+      const btn = document.getElementById('btn-submit-demo');
+      const form = document.getElementById('demo-form');
+      if (success) success.style.display = 'block';
+      if (btn) btn.style.display = 'none';
+      if (form) {
+        Array.from(form.elements).forEach(el => { if (el.type !== 'hidden') el.disabled = true; });
+      }
+    }
+  </script>
 
   <div id="footer-root"></div>
   <script src="assets/js/components.js"></script>

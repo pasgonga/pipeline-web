@@ -39,8 +39,6 @@
    1. TOKENS Y VARIABLES CSS
    ══════════════════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap');
-
 :root {
   /* Colores */
   --blue:       #3559DB;
@@ -400,6 +398,15 @@ ol {
   border-bottom-color: var(--yellow);
 }
 
+/* Nav: lista semántica */
+.nav-links {
+  list-style: none;
+}
+.nav-links li {
+  display: flex;
+  align-items: center;
+}
+
 /* Zona derecha del nav */
 .nav-right {
   display: flex;
@@ -418,11 +425,9 @@ ol {
   justify-content: space-between;
   width: 22px;
   height: 16px;
-  padding: 0;
   background: none;
   border: none;
   cursor: pointer;
-  /* Área táctil ampliada */
   padding: 12px;
   margin: -12px;
 }

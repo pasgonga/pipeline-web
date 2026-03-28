@@ -1,0 +1,2 @@
+OG Image pendiente: crear imagen 1200x630px y renombrar a og-image.png
+Contenido sugerido: fondo oscuro #0F1630, logo Pipeline, texto "Software para agencias de viajes"

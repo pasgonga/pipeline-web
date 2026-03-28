@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://pasgonga.github.io/pipeline-web/</loc><priority>1.0</priority></url>
+  <url><loc>https://pasgonga.github.io/pipeline-web/empresa.html</loc><priority>0.8</priority></url>
+  <url><loc>https://pasgonga.github.io/pipeline-web/productos.html</loc><priority>0.9</priority></url>
+  <url><loc>https://pasgonga.github.io/pipeline-web/soluciones.html</loc><priority>0.8</priority></url>
+  <url><loc>https://pasgonga.github.io/pipeline-web/integraciones.html</loc><priority>0.7</priority></url>
+  <url><loc>https://pasgonga.github.io/pipeline-web/demo.html</loc><priority>0.9</priority></url>
+  <url><loc>https://pasgonga.github.io/pipeline-web/contacto.html</loc><priority>0.8</priority></url>
+  <url><loc>https://pasgonga.github.io/pipeline-web/productos/orbis-web.html</loc><priority>0.8</priority></url>
+  <url><loc>https://pasgonga.github.io/pipeline-web/productos/orbis-booking.html</loc><priority>0.8</priority></url>
+  <url><loc>https://pasgonga.github.io/pipeline-web/productos/orbis-portal.html</loc><priority>0.8</priority></url>
+  <url><loc>https://pasgonga.github.io/pipeline-web/productos/orbis-pay.html</loc><priority>0.8</priority></url>
+  <url><loc>https://pasgonga.github.io/pipeline-web/productos/orbis-hoteles-pro.html</loc><priority>0.8</priority></url>
+  <url><loc>https://pasgonga.github.io/pipeline-web/productos/orbis-corporate.html</loc><priority>0.8</priority></url>
+</urlset>

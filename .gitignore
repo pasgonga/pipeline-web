@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Notas internas del proyecto
+memory/
+
+# Configuración interna de herramientas
+.claude/
+
+# Archivos de archivo / históricos
+pipeline_home.html
