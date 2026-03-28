@@ -1,0 +1,1452 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+  }
+
+  :root {
+    --blue: #3559DB;
+    --yellow: #FDCA44;
+    --dark: #0F1630;
+    --dark2: #151e38;
+    --mid: #1e2d52;
+    --muted: #8a9bbf;
+    --light-bg: #f5f7fc;
+    --border: #e2e8f4;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+    color: #1a2540;
+    overflow-x: hidden
+  }
+
+  /* NAV */
+  .nav {
+    background: var(--dark);
+    height: 72px;
+    display: flex;
+    align-items: center;
+    padding: 0 4%;
+    justify-content: space-between
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 6px
+  }
+
+  .logo-text {
+    font-size: 22px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.5px
+  }
+
+  .logo-dot {
+    width: 10px;
+    height: 10px;
+    background: var(--yellow);
+    border-radius: 2px;
+    margin-left: 1px;
+    margin-bottom: 2px;
+    flex-shrink: 0
+  }
+
+  .logo-soft {
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 300;
+    margin-left: 2px;
+    align-self: flex-end;
+    padding-bottom: 3px
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem
+  }
+
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color .2s
+  }
+
+  .nav-links a:hover {
+    color: #fff
+  }
+
+  .nav-right {
+    display: flex;
+    gap: 10px;
+    align-items: center
+  }
+
+  .btn-ghost {
+    color: #fff;
+    font-size: 13px;
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 1px solid rgba(255, 255, 255, .15);
+    border-radius: 6px;
+    transition: all .2s
+  }
+
+  .btn-ghost:hover {
+    border-color: rgba(255, 255, 255, .4)
+  }
+
+  .btn-nav {
+    background: var(--blue);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 9px 20px;
+    border-radius: 6px;
+    transition: background .2s
+  }
+
+  .btn-nav:hover {
+    background: #2645c4
+  }
+
+  /* HERO — tendencia 2026: texto grande izquierda, visual derecha, fondo oscuro con grid sutil */
+  .hero {
+    background: var(--dark);
+    padding: 80px 4% 0;
+    min-height: 640px;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden
+  }
+
+  .hero-bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(255, 255, 255, .03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none
+  }
+
+  .hero-glow {
+    position: absolute;
+    right: 10%;
+    top: 20%;
+    width: 400px;
+    height: 400px;
+    background: rgba(53, 89, 219, .12);
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    max-width: 1140px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 2
+  }
+
+  .hero-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(253, 202, 68, .1);
+    border: 1px solid rgba(253, 202, 68, .25);
+    color: var(--yellow);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    padding: 5px 14px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem
+  }
+
+  .hero-pill-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--yellow)
+  }
+
+  .hero h1 {
+    font-size: 3.25rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin-bottom: 1.25rem
+  }
+
+  .hero h1 .accent {
+    color: var(--yellow)
+  }
+
+  .hero-sub {
+    color: var(--muted);
+    font-size: .975rem;
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    max-width: 440px
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 3rem
+  }
+
+  .btn-primary {
+    background: var(--blue);
+    color: #fff;
+    padding: 13px 26px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all .2s;
+    display: inline-block
+  }
+
+  .btn-primary:hover {
+    background: #2645c4;
+    transform: translateY(-1px)
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: #fff;
+    padding: 13px 26px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, .18);
+    transition: all .2s;
+    display: inline-block
+  }
+
+  .btn-outline:hover {
+    border-color: rgba(255, 255, 255, .45)
+  }
+
+  .hero-trust {
+    display: flex;
+    align-items: center;
+    gap: 12px
+  }
+
+  .hero-trust-text {
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 300
+  }
+
+  .hero-avatars {
+    display: flex
+  }
+
+  .avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid var(--dark);
+    background: var(--mid);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: 600;
+    color: #fff;
+    margin-left: -8px
+  }
+
+  .avatar:first-child {
+    margin-left: 0
+  }
+
+  /* HERO VISUAL — dashboard flotante */
+  .hero-visual {
+    align-self: flex-end;
+    position: relative
+  }
+
+  .dash-window {
+    background: var(--dark2);
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: 14px 14px 0 0;
+    overflow: hidden;
+    width: 100%
+  }
+
+  .dash-titlebar {
+    background: var(--mid);
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px
+  }
+
+  .dash-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%
+  }
+
+  .dash-url {
+    flex: 1;
+    background: rgba(255, 255, 255, .06);
+    border-radius: 4px;
+    height: 20px;
+    margin: 0 8px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px
+  }
+
+  .dash-url span {
+    font-size: 10px;
+    color: var(--muted)
+  }
+
+  .dash-body {
+    padding: 1.25rem
+  }
+
+  .dash-kpis {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .75rem;
+    margin-bottom: 1rem
+  }
+
+  .kpi {
+    background: var(--mid);
+    border-radius: 8px;
+    padding: .75rem
+  }
+
+  .kpi-label {
+    font-size: 9px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    margin-bottom: .3rem
+  }
+
+  .kpi-val {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff
+  }
+
+  .kpi-tag {
+    font-size: 9px;
+    color: #4ade80;
+    margin-top: .2rem
+  }
+
+  .dash-chart-area {
+    background: var(--mid);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: .75rem
+  }
+
+  .dash-chart-label {
+    font-size: 9px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    margin-bottom: .6rem
+  }
+
+  .bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+    height: 70px
+  }
+
+  .bar {
+    flex: 1;
+    border-radius: 3px 3px 0 0
+  }
+
+  .dash-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .75rem
+  }
+
+  .dash-mini {
+    background: var(--mid);
+    border-radius: 8px;
+    padding: .75rem
+  }
+
+  .dash-mini-label {
+    font-size: 9px;
+    color: var(--muted);
+    margin-bottom: .3rem
+  }
+
+  .dash-mini-val {
+    font-size: .95rem;
+    font-weight: 600;
+    color: #fff
+  }
+
+  /* TRUST BAR */
+  .trust-bar {
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    padding: 1.1rem 4%;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    overflow: hidden
+  }
+
+  .trust-label {
+    font-size: 11px;
+    color: #b0bcd4;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    flex-shrink: 0;
+    white-space: nowrap
+  }
+
+  .trust-logos {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center
+  }
+
+  .trust-logo {
+    font-size: 12px;
+    font-weight: 600;
+    color: #c5cfe0;
+    letter-spacing: .02em;
+    white-space: nowrap
+  }
+
+  .trust-sep {
+    width: 1px;
+    height: 16px;
+    background: var(--border);
+    flex-shrink: 0
+  }
+
+  /* STATS */
+  .stats-strip {
+    background: var(--blue);
+    padding: 2.5rem 4%;
+    display: flex;
+    justify-content: center;
+    gap: 0
+  }
+
+  .stat-item {
+    flex: 1;
+    max-width: 220px;
+    text-align: center;
+    padding: 0 2rem;
+    border-right: 1px solid rgba(255, 255, 255, .15)
+  }
+
+  .stat-item:last-child {
+    border-right: none
+  }
+
+  .stat-num {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -1px
+  }
+
+  .stat-num sup {
+    font-size: 1rem;
+    font-weight: 400;
+    vertical-align: super
+  }
+
+  .stat-desc {
+    font-size: 12px;
+    color: rgba(255, 255, 255, .65);
+    margin-top: .2rem;
+    font-weight: 300
+  }
+
+  /* PRODUCTOS */
+  .section-wrap {
+    background: var(--light-bg);
+    padding: 5rem 4%
+  }
+
+  .section-wrap.white {
+    background: #fff
+  }
+
+  .section-inner {
+    max-width: 1140px;
+    margin: 0 auto
+  }
+
+  .s-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--blue);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    margin-bottom: .6rem
+  }
+
+  .s-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #0f1630;
+    line-height: 1.2;
+    letter-spacing: -.5px;
+    margin-bottom: .75rem
+  }
+
+  .s-sub {
+    font-size: .95rem;
+    color: #5a6a8a;
+    line-height: 1.8;
+    font-weight: 300;
+    max-width: 500px
+  }
+
+  .s-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+    gap: 1rem
+  }
+
+  .s-link {
+    font-size: 13px;
+    color: var(--blue);
+    font-weight: 500;
+    text-decoration: none
+  }
+
+  .prod-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem
+  }
+
+  .prod-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.75rem;
+    transition: all .25s;
+    cursor: pointer;
+    position: relative
+  }
+
+  .prod-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(53, 89, 219, .09);
+    border-color: #c5d5f5
+  }
+
+  .prod-card-top {
+    margin-bottom: 1rem
+  }
+
+  /* BADGE ORBIS AMARILLO — replicando los logos de las capturas */
+  .orbis-badge {
+    display: inline-flex;
+    align-items: center;
+    background: var(--yellow);
+    color: #0F1630;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    padding: 3px 9px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    margin-bottom: .5rem
+  }
+
+  .prod-bigname {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--blue);
+    letter-spacing: -.5px;
+    line-height: 1;
+    margin-bottom: .75rem
+  }
+
+  .prod-desc {
+    font-size: 13px;
+    color: #5a6a8a;
+    line-height: 1.65;
+    font-weight: 300;
+    margin-bottom: .75rem
+  }
+
+  .prod-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--blue);
+    background: #eef2fd;
+    padding: 3px 10px;
+    border-radius: 10px;
+    letter-spacing: .02em
+  }
+
+  .prod-arrow {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #f0f4ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity .2s
+  }
+
+  .prod-card:hover .prod-arrow {
+    opacity: 1
+  }
+
+  .prod-arrow svg {
+    width: 12px;
+    height: 12px
+  }
+
+  /* POR QUÉ PIPELINE */
+  .why-section {
+    background: var(--dark);
+    padding: 5rem 4%
+  }
+
+  .why-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center
+  }
+
+  .why-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--yellow);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    margin-bottom: .6rem
+  }
+
+  .why-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -.5px;
+    line-height: 1.2;
+    margin-bottom: .75rem
+  }
+
+  .why-sub {
+    font-size: .95rem;
+    color: var(--muted);
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 2rem
+  }
+
+  .why-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem
+  }
+
+  .why-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start
+  }
+
+  .why-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 9px;
+    background: rgba(53, 89, 219, .18);
+    border: 1px solid rgba(53, 89, 219, .3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0
+  }
+
+  .why-icon svg {
+    width: 16px;
+    height: 16px;
+    stroke: #7fa0f5;
+    stroke-width: 1.8;
+    fill: none
+  }
+
+  .why-item h5 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 3px
+  }
+
+  .why-item p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+    font-weight: 300
+  }
+
+  /* TIMELINE / TENDENCIA 2026: social proof con números grandes */
+  .proof-band {
+    background: var(--light-bg);
+    padding: 4rem 4%
+  }
+
+  .proof-inner {
+    max-width: 1140px;
+    margin: 0 auto
+  }
+
+  .proof-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 2.5rem
+  }
+
+  .proof-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center
+  }
+
+  .proof-num {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--blue);
+    letter-spacing: -.5px
+  }
+
+  .proof-label {
+    font-size: 12px;
+    color: #5a6a8a;
+    margin-top: .3rem;
+    font-weight: 300;
+    line-height: 1.4
+  }
+
+  /* TESTIMONIOS */
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 2.5rem
+  }
+
+  .tcard {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem
+  }
+
+  .tcard-stars {
+    display: flex;
+    gap: 3px;
+    margin-bottom: .75rem
+  }
+
+  .star {
+    width: 13px;
+    height: 13px;
+    background: var(--yellow);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)
+  }
+
+  .tcard-quote {
+    font-size: 13.5px;
+    color: #3a4a6a;
+    line-height: 1.7;
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 1.25rem
+  }
+
+  .tcard-author {
+    display: flex;
+    align-items: center;
+    gap: .75rem
+  }
+
+  .tcard-av {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #eef2fd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--blue);
+    flex-shrink: 0
+  }
+
+  .tcard-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1a2540
+  }
+
+  .tcard-role {
+    font-size: 11px;
+    color: #8a9bbf
+  }
+
+  /* CTA */
+  .cta-section {
+    background: var(--dark);
+    padding: 5rem 4%;
+    text-align: center;
+    position: relative;
+    overflow: hidden
+  }
+
+  .cta-glow {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 300px;
+    background: rgba(53, 89, 219, .15);
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none
+  }
+
+  .cta-inner {
+    max-width: 580px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2
+  }
+
+  .cta-section h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -.5px;
+    line-height: 1.15;
+    margin-bottom: 1rem
+  }
+
+  .cta-section h2 span {
+    color: var(--yellow)
+  }
+
+  .cta-section p {
+    font-size: .95rem;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    font-weight: 300
+  }
+
+  .cta-btns {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap
+  }
+
+  .btn-yellow {
+    background: var(--yellow);
+    color: #7a5200;
+    padding: 13px 28px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all .2s
+  }
+
+  .btn-yellow:hover {
+    transform: translateY(-1px);
+    background: #fdd835
+  }
+
+  .btn-ghost2 {
+    color: #fff;
+    padding: 13px 28px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, .18);
+    transition: all .2s
+  }
+
+  .btn-ghost2:hover {
+    border-color: rgba(255, 255, 255, .45)
+  }
+
+  /* FOOTER */
+  .footer {
+    background: #0a1020;
+    padding: 3.5rem 4% 2rem
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, .06)
+  }
+
+  .footer-brand-name {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: .75rem
+  }
+
+  .footer-brand-name span {
+    font-size: 18px;
+    font-weight: 800;
+    color: #fff
+  }
+
+  .footer-brand-sq {
+    width: 8px;
+    height: 8px;
+    background: var(--yellow);
+    border-radius: 2px
+  }
+
+  .footer-brand p {
+    font-size: 12px;
+    color: #3a4a6a;
+    line-height: 1.7;
+    font-weight: 300;
+    max-width: 210px
+  }
+
+  .footer-col h6 {
+    font-size: 10px;
+    font-weight: 700;
+    color: #3a4a6a;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    margin-bottom: 1rem
+  }
+
+  .footer-col a {
+    display: block;
+    font-size: 13px;
+    color: #4a5a7a;
+    text-decoration: none;
+    margin-bottom: .5rem;
+    transition: color .2s
+  }
+
+  .footer-col a:hover {
+    color: #fff
+  }
+
+  .footer-bottom {
+    max-width: 1140px;
+    margin: 1.5rem auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .5rem
+  }
+
+  .footer-bottom p {
+    font-size: 11px;
+    color: #2a3450
+  }
+
+  @media(max-width:900px) {
+
+    .hero-inner,
+    .why-inner,
+    .footer-grid {
+      grid-template-columns: 1fr
+    }
+
+    .hero-visual {
+      display: none
+    }
+
+    .prod-grid,
+    .testi-grid {
+      grid-template-columns: 1fr 1fr
+    }
+
+    .proof-grid {
+      grid-template-columns: 1fr 1fr
+    }
+
+    .nav-links {
+      display: none
+    }
+
+    .stats-strip {
+      gap: 0;
+      flex-wrap: wrap
+    }
+  }
+
+  @media(max-width:560px) {
+
+    .prod-grid,
+    .testi-grid {
+      grid-template-columns: 1fr
+    }
+
+    .proof-grid {
+      grid-template-columns: 1fr 1fr
+    }
+
+    .hero h1 {
+      font-size: 2.25rem
+    }
+  }
+</style>
+
+<nav class="nav">
+  <div class="logo">
+    <span class="logo-text">Pipeline</span>
+    <div class="logo-dot"></div>
+    <span class="logo-soft">software</span>
+  </div>
+  <div class="nav-links">
+    <a href="#">Productos</a>
+    <a href="#">Soluciones</a>
+    <a href="#">Clientes</a>
+    <a href="#">Blog</a>
+    <a href="#">Empresa</a>
+  </div>
+  <div class="nav-right">
+    <a href="#" class="btn-ghost">Acceder</a>
+    <a href="#" class="btn-nav">Solicitar demo</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-pill">
+        <div class="hero-pill-dot"></div>Más de 35 años transformando agencias de viajes
+      </div>
+      <h1>El software que hace <span class="accent">crecer</span> tu agencia</h1>
+      <p class="hero-sub">Pipeline Software es la plataforma líder en España para agencias de viajes. Gestión, reservas,
+        pagos y corporativo: todo integrado en el Orbis Suite.</p>
+      <div class="hero-actions">
+        <a href="#" class="btn-primary">Solicitar demo gratuita</a>
+        <a href="#" class="btn-outline">Ver el Orbis Suite →</a>
+      </div>
+      <div class="hero-trust">
+        <div class="hero-avatars">
+          <div class="avatar" style="background:#2a3f70">MA</div>
+          <div class="avatar" style="background:#1e3060">JR</div>
+          <div class="avatar" style="background:#253870">LM</div>
+          <div class="avatar" style="background:#1a2d5a">CR</div>
+        </div>
+        <span class="hero-trust-text">+4.500 agencias confían en Pipeline</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="dash-window">
+        <div class="dash-titlebar">
+          <div class="dash-dot" style="background:#ff5f57"></div>
+          <div class="dash-dot" style="background:#febc2e"></div>
+          <div class="dash-dot" style="background:#28c840"></div>
+          <div class="dash-url"><span>app.orbis.pipeline.es · Panel principal</span></div>
+        </div>
+        <div class="dash-body">
+          <div class="dash-kpis">
+            <div class="kpi">
+              <div class="kpi-label">Reservas hoy</div>
+              <div class="kpi-val">1.284</div>
+              <div class="kpi-tag">↑ +12%</div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-label">Facturación</div>
+              <div class="kpi-val">€94K</div>
+              <div class="kpi-tag">↑ +8%</div>
+            </div>
+            <div class="kpi">
+              <div class="kpi-label">Agencias</div>
+              <div class="kpi-val">4.512</div>
+              <div class="kpi-tag">↑ +34</div>
+            </div>
+          </div>
+          <div class="dash-chart-area">
+            <div class="dash-chart-label">Reservas por mes · 2026</div>
+            <div class="bars">
+              <div class="bar" style="height:45%;background:#2a3f70"></div>
+              <div class="bar" style="height:55%;background:#2a3f70"></div>
+              <div class="bar" style="height:48%;background:#2a3f70"></div>
+              <div class="bar" style="height:70%;background:#2a3f70"></div>
+              <div class="bar" style="height:62%;background:#2a3f70"></div>
+              <div class="bar" style="height:80%;background:#3559DB"></div>
+              <div class="bar" style="height:90%;background:#3559DB"></div>
+              <div class="bar" style="height:100%;background:#FDCA44"></div>
+            </div>
+          </div>
+          <div class="dash-row">
+            <div class="dash-mini">
+              <div class="dash-mini-label">Tiempo respuesta</div>
+              <div class="dash-mini-val" style="color:#4ade80">0.3s SLA 99.9%</div>
+            </div>
+            <div class="dash-mini">
+              <div class="dash-mini-label">Integraciones activas</div>
+              <div class="dash-mini-val">GDS · Hoteles · Pay</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <span class="trust-label">Integrado con</span>
+  <div class="trust-sep"></div>
+  <div class="trust-logos">
+    <span class="trust-logo">Amadeus</span>
+    <span class="trust-logo">Sabre</span>
+    <span class="trust-logo">Galileo</span>
+    <span class="trust-logo">WebBeds</span>
+    <span class="trust-logo">Grimaldi Tours</span>
+    <span class="trust-logo">CEAV</span>
+    <span class="trust-logo">IATA</span>
+  </div>
+</div>
+
+<div class="stats-strip">
+  <div class="stat-item">
+    <div class="stat-num">4.500<sup>+</sup></div>
+    <div class="stat-desc">Agencias de viajes en España</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">35<sup>+</sup></div>
+    <div class="stat-desc">Años de especialización sectorial</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">7</div>
+    <div class="stat-desc">Soluciones integradas en Orbis Suite</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">99.9<sup>%</sup></div>
+    <div class="stat-desc">Disponibilidad garantizada SLA</div>
+  </div>
+</div>
+
+<div class="section-wrap">
+  <div class="section-inner">
+    <div class="s-header">
+      <div>
+        <div class="s-eyebrow">Orbis Suite</div>
+        <div class="s-title">Un ecosistema completo<br>para tu agencia</div>
+        <div class="s-sub">Soluciones modulares e integradas, diseñadas específicamente para el sector de agencias de
+          viajes en España.</div>
+      </div>
+      <a href="#" class="s-link">Ver todos los productos →</a>
+    </div>
+    <div class="prod-grid">
+      <div class="prod-card">
+        <div class="prod-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#3559DB" stroke-width="2">
+            <path d="M7 17L17 7M7 7h10v10" />
+          </svg></div>
+        <div class="prod-card-top">
+          <div class="orbis-badge">Orbis</div>
+          <div class="prod-bigname">Web</div>
+        </div>
+        <div class="prod-desc">Gestión integral de la agencia: reservas, clientes, proveedores y facturación en una
+          plataforma unificada y adaptada al mercado español.</div>
+        <span class="prod-tag">Core · Gestión integral</span>
+      </div>
+      <div class="prod-card">
+        <div class="prod-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#3559DB" stroke-width="2">
+            <path d="M7 17L17 7M7 7h10v10" />
+          </svg></div>
+        <div class="prod-card-top">
+          <div class="orbis-badge">Orbis</div>
+          <div class="prod-bigname">Booking</div>
+        </div>
+        <div class="prod-desc">Motor de reservas multicanal con acceso a los principales GDS y proveedores turísticos en
+          tiempo real y con la mejor disponibilidad.</div>
+        <span class="prod-tag">Reservas · GDS</span>
+      </div>
+      <div class="prod-card">
+        <div class="prod-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#3559DB" stroke-width="2">
+            <path d="M7 17L17 7M7 7h10v10" />
+          </svg></div>
+        <div class="prod-card-top">
+          <div class="orbis-badge">Orbis</div>
+          <div class="prod-bigname">Portal</div>
+        </div>
+        <div class="prod-desc">Portal B2B para clientes corporativos. Gestión y reserva de viajes de empresa con
+          política de viaje, aprobaciones y autonomía total.</div>
+        <span class="prod-tag">B2B · Autoservicio</span>
+      </div>
+      <div class="prod-card">
+        <div class="prod-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#3559DB" stroke-width="2">
+            <path d="M7 17L17 7M7 7h10v10" />
+          </svg></div>
+        <div class="prod-card-top">
+          <div class="orbis-badge">Orbis</div>
+          <div class="prod-bigname">Pay</div>
+        </div>
+        <div class="prod-desc">Pasarela de pagos integrada con gestión de cobros, liquidaciones automáticas y
+          conciliación bancaria sin intervención manual.</div>
+        <span class="prod-tag">Pagos · Finanzas</span>
+      </div>
+      <div class="prod-card">
+        <div class="prod-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#3559DB" stroke-width="2">
+            <path d="M7 17L17 7M7 7h10v10" />
+          </svg></div>
+        <div class="prod-card-top">
+          <div class="orbis-badge">Orbis</div>
+          <div class="prod-bigname">Hoteles Pro</div>
+        </div>
+        <div class="prod-desc">Gestión avanzada de inventario hotelero con tarifas dinámicas, contratos con proveedores
+          y distribución multicanal integrada.</div>
+        <span class="prod-tag">Hoteles · Inventario</span>
+      </div>
+      <div class="prod-card">
+        <div class="prod-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#3559DB" stroke-width="2">
+            <path d="M7 17L17 7M7 7h10v10" />
+          </svg></div>
+        <div class="prod-card-top">
+          <div class="orbis-badge">Orbis</div>
+          <div class="prod-bigname">Corporate</div>
+        </div>
+        <div class="prod-desc">Solución completa para viajes de empresa: política corporativa, flujos de aprobación,
+          reporting y control del gasto en tiempo real.</div>
+        <span class="prod-tag">Corporate travel</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="why-section">
+  <div class="why-inner">
+    <div>
+      <div class="why-eyebrow">Por qué Pipeline</div>
+      <div class="why-title">35 años pensando solo en agencias de viajes</div>
+      <p class="why-sub">No somos un software genérico adaptado al turismo. Nacimos para las agencias de viajes
+        españolas y todo lo que hacemos está pensado exclusivamente para vosotros.</p>
+      <a href="#" class="btn-primary">Conocer nuestra historia</a>
+    </div>
+    <div class="why-items">
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12" />
+          </svg></div>
+        <div>
+          <h5>Especialización sectorial total</h5>
+          <p>Cada funcionalidad de Orbis Suite nace de escuchar a las agencias de viajes españolas durante más de tres
+            décadas.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg></div>
+        <div>
+          <h5>Soporte técnico en español</h5>
+          <p>Equipo local en Castellón con tiempos de respuesta garantizados. Tu negocio no puede esperar y nosotros lo
+            sabemos.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z" />
+          </svg></div>
+        <div>
+          <h5>Ecosistema global integrado</h5>
+          <p>Amadeus, Sabre, Galileo, WebBeds y los principales proveedores turísticos conectados en un único punto de
+            gestión.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><svg viewBox="0 0 24 24">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+          </svg></div>
+        <div>
+          <h5>Actualización continua</h5>
+          <p>El Orbis Suite evoluciona constantemente. Recibes mejoras automáticas sin coste adicional ni interrupciones
+            en tu negocio.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-wrap white">
+  <div class="section-inner">
+    <div class="s-eyebrow">Testimonios</div>
+    <div class="s-title">Lo que dicen nuestras agencias</div>
+    <div class="testi-grid">
+      <div class="tcard">
+        <div class="tcard-stars">
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+        </div>
+        <div class="tcard-quote">"Orbis Web ha transformado nuestra operativa. Lo que antes nos llevaba horas, ahora lo
+          resolvemos en minutos. No concibo la agencia sin Pipeline."</div>
+        <div class="tcard-author">
+          <div class="tcard-av">MA</div>
+          <div>
+            <div class="tcard-name">María Álvarez</div>
+            <div class="tcard-role">Directora · Viajes Mediterráneo, Valencia</div>
+          </div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-stars">
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+        </div>
+        <div class="tcard-quote">"El soporte de Pipeline es excepcional. Siempre hay alguien al teléfono y resuelven
+          cualquier incidencia antes de que afecte a nuestros clientes."</div>
+        <div class="tcard-author">
+          <div class="tcard-av">JR</div>
+          <div>
+            <div class="tcard-name">Jordi Ribas</div>
+            <div class="tcard-role">CEO · Grupo Ribas Travel, Barcelona</div>
+          </div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-stars">
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+          <div class="star"></div>
+        </div>
+        <div class="tcard-quote">"Llevamos 8 años con Orbis y cada actualización mejora la anterior. La integración con
+          los GDS es perfecta y nos ahorra muchísimo tiempo."</div>
+        <div class="tcard-author">
+          <div class="tcard-av">LM</div>
+          <div>
+            <div class="tcard-name">Laura Moreno</div>
+            <div class="tcard-role">Responsable IT · Mundo Tour, Madrid</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-section">
+  <div class="cta-glow"></div>
+  <div class="cta-inner">
+    <h2>¿Lista para llevar tu agencia al <span>siguiente nivel</span>?</h2>
+    <p>Únete a las más de 4.500 agencias de viajes que ya confían en Pipeline Software para gestionar su negocio con
+      eficiencia y profesionalidad.</p>
+    <div class="cta-btns">
+      <a href="#" class="btn-yellow">Solicitar demo gratuita</a>
+      <a href="#" class="btn-ghost2">Hablar con un experto</a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-brand-name">
+        <span>Pipeline</span>
+        <div class="footer-brand-sq"></div>
+        <span style="font-size:12px;color:#3a4a6a;font-weight:300;margin-left:3px">software</span>
+      </div>
+      <p>Software especializado para agencias de viajes desde 1989. Castellón de la Plana, España.</p>
+    </div>
+    <div class="footer-col">
+      <h6>Productos</h6>
+      <a href="#">Orbis Web</a>
+      <a href="#">Orbis Booking</a>
+      <a href="#">Orbis Portal</a>
+      <a href="#">Orbis Pay</a>
+      <a href="#">Orbis Hoteles Pro</a>
+      <a href="#">Orbis Corporate</a>
+    </div>
+    <div class="footer-col">
+      <h6>Empresa</h6>
+      <a href="#">Sobre Pipeline</a>
+      <a href="#">Equipo</a>
+      <a href="#">Casos de éxito</a>
+      <a href="#">Blog</a>
+      <a href="#">Contacto</a>
+    </div>
+    <div class="footer-col">
+      <h6>Recursos</h6>
+      <a href="#">Documentación</a>
+      <a href="#">Soporte técnico</a>
+      <a href="#">Formación</a>
+      <a href="#">Estado del sistema</a>
+      <a href="#">Política de privacidad</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Pipeline Software S.L. · Todos los derechos reservados · Castellón de la Plana</p>
+    <p>Aviso legal · Cookies</p>
+  </div>
+</footer>

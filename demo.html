@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Solicita una demostración de Orbis Suite. Te mostramos cómo encaja en la operativa de tu agencia. Sin presión comercial, sin compromiso.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <title>Solicitar demostración · Pipeline Software</title>
+</head>
+
+<body>
+
+  <div id="header-root"></div>
+
+  <main id="main-content">
+
+
+    <!-- ──────────────────────────────────────
+         HERO DE PÁGINA
+         ────────────────────────────────────── -->
+    <section class="page-hero" aria-labelledby="demo-heading">
+      <div class="page-hero-bg" aria-hidden="true"></div>
+      <div class="page-hero-inner">
+        <span class="page-hero-badge">Demostración</span>
+        <h1 id="demo-heading">Hablemos de tu agencia</h1>
+        <p class="page-hero-sub">
+          Cuéntanos cómo trabajáis y te mostramos cómo encaja Orbis Suite en vuestra operativa.
+          Una sesión técnica con alguien que conoce el sector. Sin presentaciones genéricas,
+          sin presión comercial.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ──────────────────────────────────────
+         SECCIÓN DE FORMULARIO
+         ────────────────────────────────────── -->
+    <section class="demo-section" aria-labelledby="form-heading">
+      <div class="demo-inner">
+
+        <div style="text-align:center;margin-bottom:var(--space-lg);">
+          <p class="s-eyebrow">Formulario de contacto</p>
+          <h2 class="s-title" id="form-heading">Solicitar una demostración</h2>
+          <p class="s-sub" style="max-width:480px;margin:0.5rem auto 0;">
+            Rellena el formulario y te contactaremos en menos de 24 horas hábiles para
+            coordinar la sesión.
+          </p>
+        </div>
+
+        <!-- Formulario principal — HTML estático, sin backend -->
+        <form class="demo-form" action="#" method="post" novalidate aria-label="Formulario de solicitud de demostración">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre">Nombre <span aria-hidden="true">*</span></label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="given-name">
+            </div>
+            <div class="form-group">
+              <label for="apellidos">Apellidos <span aria-hidden="true">*</span></label>
+              <input type="text" id="apellidos" name="apellidos" placeholder="Tus apellidos" required autocomplete="family-name">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="empresa">Agencia o empresa <span aria-hidden="true">*</span></label>
+              <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu agencia" required autocomplete="organization">
+            </div>
+            <div class="form-group">
+              <label for="cargo">Cargo</label>
+              <input type="text" id="cargo" name="cargo" placeholder="Ej: Director, Responsable IT" autocomplete="organization-title">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email profesional <span aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" placeholder="tu@agencia.es" required autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000" autocomplete="tel">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="tipo-agencia">Tipo de agencia <span aria-hidden="true">*</span></label>
+            <select id="tipo-agencia" name="tipo-agencia" required>
+              <option value="" disabled selected>Selecciona el tipo de agencia</option>
+              <option value="minorista">Agencia minorista independiente</option>
+              <option value="grupo">Grupo o red de agencias</option>
+              <option value="producto-propio">Agencia con producto hotelero propio</option>
+              <option value="tmc">Travel Management Company (TMC)</option>
+              <option value="mayorista">Mayorista / Touroperador</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Módulos de interés</label>
+            <div class="form-check-group">
+              <label class="form-check-item">
+                <input type="checkbox" name="modulos" value="orbis-web">
+                Orbis Web — Gestión integral
+              </label>
+              <label class="form-check-item">
+                <input type="checkbox" name="modulos" value="orbis-booking">
+                Orbis Booking — Reservas GDS
+              </label>
+              <label class="form-check-item">
+                <input type="checkbox" name="modulos" value="orbis-portal">
+                Orbis Portal — Portal B2B corporativo
+              </label>
+              <label class="form-check-item">
+                <input type="checkbox" name="modulos" value="orbis-pay">
+                Orbis Pay — Pagos y conciliación
+              </label>
+              <label class="form-check-item">
+                <input type="checkbox" name="modulos" value="orbis-hoteles-pro">
+                Orbis Hoteles Pro — Cupos y producto propio
+              </label>
+              <label class="form-check-item">
+                <input type="checkbox" name="modulos" value="orbis-corporate">
+                Orbis Corporate — Travel Management
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="mensaje">¿Algo que quieras contarnos antes de la demo?</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Describe brevemente vuestra operativa actual, los sistemas que usáis o cualquier duda específica…"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:1rem;">
+            Enviar solicitud de demostración
+          </button>
+
+          <p class="form-note">
+            Al enviar este formulario aceptas nuestra
+            <a href="privacidad.html" style="color:var(--blue);text-decoration:underline;">política de privacidad</a>.
+            Tus datos se utilizan exclusivamente para coordinar la demostración y no se ceden a terceros.
+            Pipeline Software S.L. · CIF B-12345678.
+          </p>
+
+        </form>
+
+      </div>
+    </section>
+
+
+    <!-- ──────────────────────────────────────
+         INFORMACIÓN DE CONTACTO ALTERNATIVA
+         ────────────────────────────────────── -->
+    <section class="section-wrap section-wrap--white" aria-labelledby="contacto-alt-heading">
+      <div class="section-inner">
+
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;text-align:center;">
+
+          <div style="padding:2rem;">
+            <div style="font-size:1.5rem;margin-bottom:1rem;" aria-hidden="true">📞</div>
+            <h3 style="font-size:0.9375rem;font-weight:600;color:var(--body-text);margin-bottom:0.5rem;">Llamar directamente</h3>
+            <p style="font-size:var(--text-sm);color:#5a6a8a;line-height:1.6;">
+              Si prefieres hablar antes de rellenar el formulario:<br>
+              <a href="tel:+34964000000" style="color:var(--blue);text-decoration:none;font-weight:500;">+34 964 000 000</a>
+            </p>
+          </div>
+
+          <div style="padding:2rem;">
+            <div style="font-size:1.5rem;margin-bottom:1rem;" aria-hidden="true">✉️</div>
+            <h3 style="font-size:0.9375rem;font-weight:600;color:var(--body-text);margin-bottom:0.5rem;">Email directo</h3>
+            <p style="font-size:var(--text-sm);color:#5a6a8a;line-height:1.6;">
+              Para consultas técnicas o información sobre productos:<br>
+              <a href="mailto:info@pipeline.es" style="color:var(--blue);text-decoration:none;font-weight:500;">info@pipeline.es</a>
+            </p>
+          </div>
+
+          <div style="padding:2rem;">
+            <div style="font-size:1.5rem;margin-bottom:1rem;" aria-hidden="true">⏱️</div>
+            <h3 style="font-size:0.9375rem;font-weight:600;color:var(--body-text);margin-bottom:0.5rem;">Tiempo de respuesta</h3>
+            <p style="font-size:var(--text-sm);color:#5a6a8a;line-height:1.6;">
+              Respondemos las solicitudes de demostración en menos de 24 horas hábiles.
+              Horario: L–V de 9:00 a 18:00.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+  </main>
+
+  <div id="footer-root"></div>
+  <script src="assets/js/components.js"></script>
+
+</body>
+</html>

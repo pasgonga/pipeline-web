@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contacta con Pipeline Software. Castellón de la Plana, España. Software para agencias de viajes desde 1989.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <title>Contacto · Pipeline Software</title>
+</head>
+
+<body>
+
+  <div id="header-root"></div>
+
+  <main id="main-content">
+
+
+    <!-- ──────────────────────────────────────
+         HERO DE PÁGINA
+         ────────────────────────────────────── -->
+    <section class="page-hero" aria-labelledby="contacto-heading">
+      <div class="page-hero-bg" aria-hidden="true"></div>
+      <div class="page-hero-inner">
+        <span class="page-hero-badge">Contacto</span>
+        <h1 id="contacto-heading">Estamos en Castellón de la Plana</h1>
+        <p class="page-hero-sub">
+          Nuestro equipo técnico y comercial atiende de lunes a viernes de 9:00 a 18:00.
+          Si tienes una urgencia de soporte, usa el canal prioritario de soporte técnico.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ──────────────────────────────────────
+         SECCIÓN CONTACTO: INFO + FORMULARIO
+         ────────────────────────────────────── -->
+    <section class="section-wrap section-wrap--white" aria-labelledby="contacto-info-heading">
+      <div class="section-inner">
+
+        <div class="contact-grid">
+
+          <!-- Información de contacto -->
+          <div class="contact-info">
+
+            <h2 class="s-title" id="contacto-info-heading" style="font-size:var(--text-xl);margin-bottom:1.5rem;">Pipeline Software S.L.</h2>
+
+            <h3>Dirección</h3>
+            <p>
+              Calle de las Agencias, 12<br>
+              12001 Castellón de la Plana<br>
+              España
+            </p>
+
+            <h3>Teléfono</h3>
+            <p>
+              <a href="tel:+34964000000">+34 964 000 000</a><br>
+              <span style="font-size:var(--text-xs);color:#8a9bbf;">L–V de 9:00 a 18:00</span>
+            </p>
+
+            <h3>Email</h3>
+            <p>
+              <a href="mailto:info@pipeline.es">info@pipeline.es</a><br>
+              <a href="mailto:soporte@pipeline.es">soporte@pipeline.es</a>
+              <span style="font-size:var(--text-xs);color:#8a9bbf;display:block;">(soporte técnico clientes)</span>
+            </p>
+
+            <h3>Información legal</h3>
+            <p>
+              Pipeline Software S.L.<br>
+              CIF: B-12345678<br>
+              Registro Mercantil de Castellón
+            </p>
+
+            <!-- Separador -->
+            <div style="border-top:1px solid var(--border);margin:2rem 0;"></div>
+
+            <!-- Soporte urgente -->
+            <div style="background:var(--light-bg);border-radius:var(--radius-md);padding:1.25rem;border-left:3px solid var(--blue);">
+              <p style="font-size:0.875rem;font-weight:600;color:var(--body-text);margin-bottom:0.4rem;">¿Incidencia urgente?</p>
+              <p style="font-size:var(--text-sm);color:#5a6a8a;line-height:1.6;">
+                Los clientes con SLA activo tienen un número de soporte prioritario disponible en
+                su documentación de contrato.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Formulario de contacto -->
+          <div>
+            <p class="s-eyebrow">Escríbenos</p>
+            <h2 class="s-title" style="font-size:var(--text-xl);margin-bottom:var(--space-sm);">Formulario de contacto</h2>
+
+            <form class="demo-form" action="#" method="post" novalidate aria-label="Formulario de contacto">
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cnt-nombre">Nombre <span aria-hidden="true">*</span></label>
+                  <input type="text" id="cnt-nombre" name="nombre" placeholder="Tu nombre" required autocomplete="name">
+                </div>
+                <div class="form-group">
+                  <label for="cnt-empresa">Empresa</label>
+                  <input type="text" id="cnt-empresa" name="empresa" placeholder="Tu agencia o empresa" autocomplete="organization">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="cnt-email">Email <span aria-hidden="true">*</span></label>
+                <input type="email" id="cnt-email" name="email" placeholder="tu@email.es" required autocomplete="email">
+              </div>
+
+              <div class="form-group">
+                <label for="cnt-asunto">Motivo de contacto</label>
+                <select id="cnt-asunto" name="asunto">
+                  <option value="" disabled selected>Selecciona el motivo</option>
+                  <option value="demo">Solicitar demostración</option>
+                  <option value="info-producto">Información sobre productos</option>
+                  <option value="soporte">Soporte técnico (clientes)</option>
+                  <option value="facturacion">Facturación y contratos</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="cnt-mensaje">Mensaje <span aria-hidden="true">*</span></label>
+                <textarea id="cnt-mensaje" name="mensaje" placeholder="¿En qué podemos ayudarte?" required style="min-height:130px;"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:1rem;">
+                Enviar mensaje
+              </button>
+
+              <p class="form-note">
+                Al enviar este formulario aceptas nuestra
+                <a href="privacidad.html" style="color:var(--blue);text-decoration:underline;">política de privacidad</a>.
+              </p>
+
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ──────────────────────────────────────
+         MAPA PLACEHOLDER
+         ────────────────────────────────────── -->
+    <div style="background:var(--light-bg);border-top:1px solid var(--border);padding:var(--space-xl) var(--page-pad);text-align:center;" role="complementary" aria-label="Ubicación de Pipeline Software">
+      <div style="max-width:var(--max-width);margin:0 auto;">
+        <div style="background:var(--border);border-radius:var(--radius-lg);height:300px;display:flex;align-items:center;justify-content:center;">
+          <p style="color:#8a9bbf;font-size:var(--text-sm);">
+            Pipeline Software S.L. · Castellón de la Plana, España<br>
+            <span style="font-size:var(--text-xs);">(Mapa disponible próximamente)</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+  </main>
+
+  <div id="footer-root"></div>
+  <script src="assets/js/components.js"></script>
+
+</body>
+</html>
