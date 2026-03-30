@@ -165,6 +165,16 @@ async function initComponents(options = {}) {
     loadComponent(cfg.footerSelector, `${cfg.basePath}${cfg.footerFile}`),
   ]);
 
+  // Si estamos en un subdirectorio, ajustar rutas relativas de imágenes en el header
+  if (cfg.basePath !== './') {
+    document.querySelectorAll(`${cfg.headerSelector} img[src]`).forEach(img => {
+      const src = img.getAttribute('src');
+      if (src && !src.startsWith('http') && !src.startsWith('/') && !src.startsWith(cfg.basePath)) {
+        img.setAttribute('src', cfg.basePath + src);
+      }
+    });
+  }
+
   // Inicializar comportamientos que dependen de los componentes cargados
   initMobileNav();
   setActiveNavLink();

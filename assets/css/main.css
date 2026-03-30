@@ -343,34 +343,16 @@ ol {
 .logo {
   display: flex;
   align-items: center;
-  gap: 6px;
   text-decoration: none;
-}
-
-.logo-text {
-  font-size: 1.375rem;
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: -0.5px;
-}
-
-.logo-dot {
-  width: 10px;
-  height: 10px;
-  background: var(--yellow);
-  border-radius: 2px;
-  margin-left: 1px;
-  margin-bottom: 2px;
   flex-shrink: 0;
 }
 
-.logo-soft {
-  font-size: var(--text-xs);
-  color: var(--muted);
-  font-weight: 300;
-  margin-left: 2px;
-  align-self: flex-end;
-  padding-bottom: 3px;
+.logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
+  /* El logo oficial es oscuro; lo invertimos sobre el nav oscuro */
+  filter: brightness(0) invert(1);
 }
 
 /* Links de navegación */
