@@ -179,6 +179,124 @@ async function initComponents(options = {}) {
   initMobileNav();
   setActiveNavLink();
   initStickyNav();
+  initSearch(cfg.basePath);
 }
 
 document.addEventListener('DOMContentLoaded', () => initComponents());
+
+
+/* ─── Búsqueda interna ───────────────────────────────────────────────────── */
+
+const PIPELINE_SEARCH_INDEX = [
+  { title: 'Orbis Web',         desc: 'Plataforma central. Expedientes, facturación, VERI*FACTU, TicketBAI, SII, Ses Hospedajes.', url: 'productos/orbis-web.html',         tags: 'orbis web gestión expedientes clientes facturación emisión verifactu ticketbai sii ses hospedajes cumplimiento normativo' },
+  { title: 'Orbis Booking',     desc: 'Sistema de reservas web para comercialización online.',                                      url: 'productos/orbis-booking.html',     tags: 'orbis booking reservas web online comercialización' },
+  { title: 'Orbis Portal',      desc: 'Comercio electrónico B2B y B2C para agencias.',                                             url: 'productos/orbis-portal.html',      tags: 'orbis portal b2b b2c ecommerce venta online' },
+  { title: 'Orbis Pay',         desc: 'Gestión de cobros mediante enlaces de pago seguros.',                                       url: 'productos/orbis-pay.html',         tags: 'orbis pay pagos cobros enlaces pago' },
+  { title: 'Orbis Hoteles Pro', desc: 'Búsqueda y reserva profesional de hoteles, múltiples proveedores.',                         url: 'productos/orbis-hoteles-pro.html', tags: 'orbis hoteles pro hoteles búsqueda reserva proveedores producto propio' },
+  { title: 'Orbis Corporate',   desc: 'Gestión de viajes corporativos. Reporting y automatización documental.',                    url: 'productos/orbis-corporate.html',   tags: 'orbis corporate corporativo tmc empresa viajes reporting' },
+  { title: 'Productos',         desc: 'Todos los módulos Orbis para agencias de viajes.',                                          url: 'productos.html',                   tags: 'productos módulos orbis catálogo suite' },
+  { title: 'Soluciones',        desc: 'Soluciones adaptadas a cada modelo de agencia.',                                            url: 'soluciones.html',                  tags: 'soluciones minorista grupo red corporativa tmc' },
+  { title: 'Empresa',           desc: 'Pipeline Software. Especialistas en software para agencias desde 1989.',                    url: 'empresa.html',                     tags: 'empresa historia quiénes somos castellón 1989 pipeline' },
+  { title: 'Solicitar demo',    desc: 'Solicitar una demostración de las soluciones Orbis.',                                       url: 'demo.html',                        tags: 'demo demostración solicitar contacto comercial' },
+  { title: 'Contacto',          desc: 'Contactar con Pipeline Software en Castellón.',                                             url: 'contacto.html',                    tags: 'contacto teléfono email dirección castellón' },
+  { title: 'Integraciones',     desc: 'Conexión con GDS Amadeus, Sabre y Galileo. BSP, IATA.',                                    url: 'integraciones.html',               tags: 'integraciones gds amadeus sabre galileo bsp iata' },
+  { title: 'VERI*FACTU',        desc: 'Soporte a VERI*FACTU en Orbis Web. Cumplimiento fiscal.',                                   url: 'productos/orbis-web.html',         tags: 'verifactu veri factu facturación cumplimiento hacienda' },
+  { title: 'TicketBAI',         desc: 'Cumplimiento TicketBAI en Orbis Web.',                                                      url: 'productos/orbis-web.html',         tags: 'ticketbai ticket bai euskadi país vasco navarra álava cumplimiento fiscal' },
+  { title: 'SII',               desc: 'Suministro Inmediato de Información. Orbis SII.',                                           url: 'productos/orbis-web.html',         tags: 'sii suministro inmediato información iva hacienda' },
+  { title: 'Ses Hospedajes',    desc: 'Comunicación de viajeros. Ses Hospedajes.',                                                 url: 'productos/orbis-web.html',         tags: 'ses hospedajes partes viajeros policía guardia civil comunicación' },
+];
+
+function initSearch(basePath) {
+  if (document.getElementById('search-overlay')) return;
+
+  const base = (basePath === './' || !basePath) ? '' : basePath;
+
+  const overlay = document.createElement('div');
+  overlay.id = 'search-overlay';
+  overlay.className = 'search-overlay';
+  overlay.setAttribute('role', 'dialog');
+  overlay.setAttribute('aria-modal', 'true');
+  overlay.setAttribute('aria-label', 'Búsqueda en Pipeline Software');
+  overlay.innerHTML = `
+    <div class="search-modal" role="search">
+      <div class="search-input-wrap">
+        <svg class="search-input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input
+          class="search-input"
+          id="search-input"
+          type="search"
+          autocomplete="off"
+          spellcheck="false"
+          placeholder="Buscar productos, soluciones o contenidos…"
+          aria-label="Buscar en Pipeline Software"
+        >
+        <button class="search-close-btn" id="search-close-btn" aria-label="Cerrar búsqueda" type="button">ESC</button>
+      </div>
+      <div class="search-results" id="search-results" role="listbox" aria-label="Resultados"></div>
+      <p class="search-hint">↑↓ para navegar &nbsp;·&nbsp; Enter para abrir &nbsp;·&nbsp; ESC para cerrar</p>
+    </div>`;
+  document.body.appendChild(overlay);
+
+  const input    = overlay.querySelector('#search-input');
+  const results  = overlay.querySelector('#search-results');
+  const closeBtn = overlay.querySelector('#search-close-btn');
+
+  function resultHTML(item) {
+    return `<a class="search-result-item" href="${base}${item.url}" role="option">
+      <span class="search-result-title">${item.title}</span>
+      <span class="search-result-desc">${item.desc}</span>
+    </a>`;
+  }
+
+  function renderResults(query) {
+    const q = query.trim().toLowerCase();
+    const pool = q
+      ? PIPELINE_SEARCH_INDEX.filter(item =>
+          item.title.toLowerCase().includes(q) ||
+          item.tags.toLowerCase().includes(q) ||
+          item.desc.toLowerCase().includes(q))
+      : PIPELINE_SEARCH_INDEX.slice(0, 8);
+    results.innerHTML = pool.map(resultHTML).join('');
+  }
+
+  function openSearch() {
+    overlay.classList.add('search-overlay--open');
+    const btn = document.getElementById('nav-search-btn');
+    if (btn) btn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+    renderResults('');
+    setTimeout(() => input.focus(), 50);
+  }
+
+  function closeSearch() {
+    overlay.classList.remove('search-overlay--open');
+    const btn = document.getElementById('nav-search-btn');
+    if (btn) btn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    input.value = '';
+    results.innerHTML = '';
+  }
+
+  input.addEventListener('input', () => renderResults(input.value));
+  closeBtn.addEventListener('click', closeSearch);
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) closeSearch(); });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay.classList.contains('search-overlay--open')) closeSearch();
+  });
+
+  overlay.addEventListener('keydown', (e) => {
+    if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+    const items = [...results.querySelectorAll('.search-result-item')];
+    if (!items.length) return;
+    const idx = items.indexOf(document.activeElement);
+    e.preventDefault();
+    if (e.key === 'ArrowDown') (items[idx + 1] || items[0]).focus();
+    else (items[idx - 1] || input).focus();
+  });
+
+  const searchBtn = document.getElementById('nav-search-btn');
+  if (searchBtn) searchBtn.addEventListener('click', openSearch);
+}
