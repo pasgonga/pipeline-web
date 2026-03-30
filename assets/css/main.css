@@ -882,6 +882,8 @@ ol {
   position: relative;
   text-decoration: none;
   display: block;
+  cursor: pointer;
+  color: inherit;
 }
 
 .prod-card:hover {
