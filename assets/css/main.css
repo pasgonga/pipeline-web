@@ -588,8 +588,9 @@ ol {
 /* ─── Dashboard flotante (visual decorativo del hero) ─── */
 
 .hero-visual {
-  align-self: flex-end;
+  align-self: center;
   position: relative;
+  margin-top: -2rem;
 }
 
 .dash-window {
