@@ -633,7 +633,7 @@ ol {
 
 .dash-url span {
   font-size: 10px;
-  color: var(--muted);
+  color: #c8d5f0; /* WCAG AA ≈6.8:1 on --mid bg (was var(--muted) ≈3.7:1) */
 }
 
 .dash-body {
@@ -1286,7 +1286,7 @@ ol {
 .footer-col h2 {
   font-size: 10px;
   font-weight: 700;
-  color: #5a7aaa;       /* ✓ contraste corregido (era #3a4a6a, ratio ~1.4:1) */
+  color: #6080b0;       /* WCAG AA ≈4.8:1 on #0a1020 (era #5a7aaa ≈4.4:1, fallaba) */
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 1rem;
@@ -2353,6 +2353,11 @@ ol {
   padding: var(--space-xl) 0;
   border-top: 1px solid rgba(255,255,255,0.04);
   border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+/* Eyebrow sobre fondo oscuro — var(--blue) falla (~3:1); usamos azul claro */
+.compliance-section .s-eyebrow {
+  color: #7ea5ff; /* WCAG AA ≈7.2:1 on var(--dark) #0F1630 */
 }
 
 .compliance-inner {
