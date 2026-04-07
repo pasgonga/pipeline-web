@@ -741,7 +741,7 @@ ol {
 
 .trust-label {
   font-size: var(--text-xs);
-  color: #b0bcd4;
+  color: #5a6a8a; /* WCAG AA ≈4.9:1 on white (was #b0bcd4 ≈1.9:1) */
   text-transform: uppercase;
   letter-spacing: 0.08em;
   flex-shrink: 0;
@@ -758,7 +758,7 @@ ol {
 .trust-logo {
   font-size: 0.75rem;
   font-weight: 600;
-  color: #c5cfe0;
+  color: #5a6a8a; /* WCAG AA ≈4.9:1 on white (was #c5cfe0 ≈1.5:1) */
   letter-spacing: 0.02em;
   white-space: nowrap;
 }
@@ -2413,7 +2413,7 @@ ol {
 .prod-desc--compliance {
   margin-top: 0.35rem;
   font-size: var(--text-xs) !important;
-  color: #7ea5ff !important;
+  color: #3559DB !important; /* WCAG AA ≈5.5:1 on white (was #7ea5ff ≈2.3:1) */
   line-height: 1.55 !important;
 }
 
