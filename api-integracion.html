@@ -48,102 +48,313 @@
 
 
     <!-- ─────────────────────────────────────────────
-         HERO
+         1. HERO + DIAGRAMA
          ───────────────────────────────────────────── -->
     <section class="page-hero" aria-labelledby="api-integ-heading">
       <div class="page-hero-bg" aria-hidden="true"></div>
       <div class="page-hero-inner">
+
         <span class="page-hero-badge">Pipeline Software · Integración</span>
         <h1 id="api-integ-heading">
           APIs e integración<br>para agencias de viajes
         </h1>
         <p class="page-hero-sub">
-          Conecta proveedores, reservas, canales de venta y sistemas internos en una operativa más eficiente.
+          Muchas agencias ya están digitalizadas. El siguiente paso no es más software, sino conseguir que los sistemas que ya usan trabajen conectados.
         </p>
         <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
           <a href="contacto.html" class="btn btn-primary">Hablar sobre integración</a>
           <a href="productos.html" class="btn btn-outline">Ver el ecosistema Orbis →</a>
         </div>
+
+        <!-- Diagrama: Fragmentada vs Conectada -->
+        <div class="integ-hero-diagram" aria-hidden="true">
+          <svg viewBox="0 0 760 242" xmlns="http://www.w3.org/2000/svg">
+
+            <!-- ── PANEL IZQUIERDO: FRAGMENTADA ── -->
+            <text x="165" y="18" font-family="Poppins,system-ui,sans-serif" font-size="10"
+                  font-weight="600" fill="rgba(255,255,255,0.4)"
+                  text-anchor="middle" letter-spacing="1.5">SIN INTEGRACIÓN</text>
+
+            <!-- chips con borde discontinuo -->
+            <rect x="14" y="28" width="118" height="23" rx="4"
+                  fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.18)"
+                  stroke-width="1" stroke-dasharray="4 3"/>
+            <text x="73" y="44" font-family="Poppins,system-ui,sans-serif" font-size="10"
+                  font-weight="500" fill="rgba(255,255,255,0.42)" text-anchor="middle">GDS / Proveedores</text>
+
+            <rect x="168" y="44" width="98" height="23" rx="4"
+                  fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.18)"
+                  stroke-width="1" stroke-dasharray="4 3"/>
+            <text x="217" y="60" font-family="Poppins,system-ui,sans-serif" font-size="10"
+                  font-weight="500" fill="rgba(255,255,255,0.42)" text-anchor="middle">Reservas</text>
+
+            <rect x="34" y="82" width="88" height="23" rx="4"
+                  fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.18)"
+                  stroke-width="1" stroke-dasharray="4 3"/>
+            <text x="78" y="98" font-family="Poppins,system-ui,sans-serif" font-size="10"
+                  font-weight="500" fill="rgba(255,255,255,0.42)" text-anchor="middle">Web / Portal</text>
+
+            <rect x="170" y="88" width="72" height="23" rx="4"
+                  fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.18)"
+                  stroke-width="1" stroke-dasharray="4 3"/>
+            <text x="206" y="104" font-family="Poppins,system-ui,sans-serif" font-size="10"
+                  font-weight="500" fill="rgba(255,255,255,0.42)" text-anchor="middle">CRM</text>
+
+            <rect x="12" y="136" width="72" height="23" rx="4"
+                  fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.18)"
+                  stroke-width="1" stroke-dasharray="4 3"/>
+            <text x="48" y="152" font-family="Poppins,system-ui,sans-serif" font-size="10"
+                  font-weight="500" fill="rgba(255,255,255,0.42)" text-anchor="middle">Pagos</text>
+
+            <rect x="148" y="142" width="104" height="23" rx="4"
+                  fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.18)"
+                  stroke-width="1" stroke-dasharray="4 3"/>
+            <text x="200" y="158" font-family="Poppins,system-ui,sans-serif" font-size="10"
+                  font-weight="500" fill="rgba(255,255,255,0.42)" text-anchor="middle">Conciliación</text>
+
+            <rect x="78" y="188" width="104" height="23" rx="4"
+                  fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.18)"
+                  stroke-width="1" stroke-dasharray="4 3"/>
+            <text x="130" y="204" font-family="Poppins,system-ui,sans-serif" font-size="10"
+                  font-weight="500" fill="rgba(255,255,255,0.42)" text-anchor="middle">Normativa / Fiscal</text>
+
+            <!-- caption izquierda -->
+            <text x="165" y="232" font-family="Poppins,system-ui,sans-serif" font-size="9"
+                  fill="rgba(255,255,255,0.25)" text-anchor="middle">Datos duplicados · Trabajo manual · Errores</text>
+
+            <!-- ── SEPARADOR ── -->
+            <line x1="352" y1="10" x2="352" y2="232"
+                  stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+            <!-- flecha -->
+            <text x="376" y="125" font-family="Poppins,system-ui,sans-serif" font-size="22"
+                  font-weight="300" fill="rgba(99,142,255,0.5)" text-anchor="middle">→</text>
+
+            <!-- ── PANEL DERECHO: CONECTADA ── -->
+            <text x="575" y="18" font-family="Poppins,system-ui,sans-serif" font-size="10"
+                  font-weight="600" fill="rgba(255,255,255,0.75)"
+                  text-anchor="middle" letter-spacing="1.5">CON PIPELINE · ORBIS</text>
+
+            <!-- líneas hacia el hub -->
+            <g stroke="rgba(99,142,255,0.35)" stroke-width="1.5" fill="none">
+              <!-- izq: GDS -->    <line x1="476" y1="51" x2="553" y2="97"/>
+              <!-- izq: Pagos -->   <line x1="476" y1="119" x2="549" y2="119"/>
+              <!-- izq: Contab. --> <line x1="476" y1="187" x2="553" y2="141"/>
+              <!-- der: Reservas -->  <line x1="697" y1="51" x2="620" y2="97"/>
+              <!-- der: Concil. -->   <line x1="697" y1="119" x2="625" y2="119"/>
+              <!-- der: Normativa --> <line x1="697" y1="187" x2="620" y2="141"/>
+              <!-- abajo: Web/CRM --> <line x1="575" y1="205" x2="575" y2="157"/>
+            </g>
+
+            <!-- hub central -->
+            <circle cx="575" cy="119" r="40" fill="#3559DB"/>
+            <circle cx="575" cy="119" r="40" fill="none"
+                    stroke="rgba(99,142,255,0.5)" stroke-width="1.5"/>
+            <text x="575" y="114" font-family="Poppins,system-ui,sans-serif"
+                  font-size="11" font-weight="700" fill="#fff" text-anchor="middle">Pipeline</text>
+            <text x="575" y="129" font-family="Poppins,system-ui,sans-serif"
+                  font-size="9" font-weight="400" fill="rgba(255,255,255,0.7)" text-anchor="middle">Ecosistema Orbis</text>
+
+            <!-- chips conectados — columna izquierda -->
+            <rect x="404" y="40" width="108" height="23" rx="4"
+                  fill="rgba(53,89,219,0.22)" stroke="rgba(99,142,255,0.45)" stroke-width="1"/>
+            <text x="458" y="56" font-family="Poppins,system-ui,sans-serif" font-size="10"
+                  font-weight="500" fill="rgba(255,255,255,0.85)" text-anchor="middle">GDS / Proveedores</text>
+
+            <rect x="404" y="108" width="108" height="23" rx="4"
+                  fill="rgba(53,89,219,0.22)" stroke="rgba(99,142,255,0.45)" stroke-width="1"/>
+            <text x="458" y="124" font-family="Poppins,system-ui,sans-serif" font-size="10"
+                  font-weight="500" fill="rgba(255,255,255,0.85)" text-anchor="middle">Pagos</text>
+
+            <rect x="404" y="176" width="108" height="23" rx="4"
+                  fill="rgba(53,89,219,0.22)" stroke="rgba(99,142,255,0.45)" stroke-width="1"/>
+            <text x="458" y="192" font-family="Poppins,system-ui,sans-serif" font-size="10"
+                  font-weight="500" fill="rgba(255,255,255,0.85)" text-anchor="middle">Contabilidad</text>
+
+            <!-- chips conectados — columna derecha -->
+            <rect x="640" y="40" width="108" height="23" rx="4"
+                  fill="rgba(53,89,219,0.22)" stroke="rgba(99,142,255,0.45)" stroke-width="1"/>
+            <text x="694" y="56" font-family="Poppins,system-ui,sans-serif" font-size="10"
+                  font-weight="500" fill="rgba(255,255,255,0.85)" text-anchor="middle">Reservas</text>
+
+            <rect x="640" y="108" width="108" height="23" rx="4"
+                  fill="rgba(53,89,219,0.22)" stroke="rgba(99,142,255,0.45)" stroke-width="1"/>
+            <text x="694" y="124" font-family="Poppins,system-ui,sans-serif" font-size="10"
+                  font-weight="500" fill="rgba(255,255,255,0.85)" text-anchor="middle">Conciliación</text>
+
+            <rect x="640" y="176" width="108" height="23" rx="4"
+                  fill="rgba(53,89,219,0.22)" stroke="rgba(99,142,255,0.45)" stroke-width="1"/>
+            <text x="694" y="192" font-family="Poppins,system-ui,sans-serif" font-size="10"
+                  font-weight="500" fill="rgba(255,255,255,0.85)" text-anchor="middle">Normativa</text>
+
+            <!-- chip central inferior -->
+            <rect x="514" y="194" width="122" height="23" rx="4"
+                  fill="rgba(53,89,219,0.22)" stroke="rgba(99,142,255,0.45)" stroke-width="1"/>
+            <text x="575" y="210" font-family="Poppins,system-ui,sans-serif" font-size="10"
+                  font-weight="500" fill="rgba(255,255,255,0.85)" text-anchor="middle">Web / Portal / CRM</text>
+
+            <!-- caption derecha -->
+            <text x="575" y="232" font-family="Poppins,system-ui,sans-serif" font-size="9"
+                  fill="rgba(255,255,255,0.4)" text-anchor="middle">Un único flujo · Sin duplicidades · Sin fricción</text>
+
+          </svg>
+        </div>
+        <!-- /Diagrama -->
+
       </div>
     </section>
+    <!-- /HERO -->
 
 
     <!-- ─────────────────────────────────────────────
-         EL PROBLEMA: FRAGMENTACIÓN OPERATIVA
+         2. EL PROBLEMA
          ───────────────────────────────────────────── -->
-    <section class="section-wrap section-wrap--white" aria-labelledby="fragmentacion-heading">
+    <section class="section-wrap" aria-labelledby="fragmentacion-heading">
       <div class="section-inner">
 
-        <div class="two-col-grid">
+        <p class="s-eyebrow">El problema</p>
+        <h2 class="s-title" id="fragmentacion-heading">
+          Digitalizadas, sí. Integradas, no siempre.
+        </h2>
+        <p class="s-sub" style="max-width:620px;">
+          El problema de muchas agencias no es la falta de software, sino que sus sistemas no se hablan entre sí. El dato entra por un lado y hay que trasladarlo manualmente al siguiente.
+        </p>
 
-          <div>
-            <p class="s-eyebrow">El problema</p>
-            <h2 class="s-title" id="fragmentacion-heading">
-              La agencia que opera en silos paga un coste oculto
-            </h2>
-            <p style="font-size:var(--text-base);color:var(--text-body);line-height:1.85;font-weight:300;margin-bottom:1rem;">
-              La mayoría de las agencias de viajes trabajan con varios sistemas que no se comunican entre sí: el GDS para reservas, una hoja de cálculo para seguimiento, otro programa para facturación, un tercero para pagos. Cada sistema hace su parte, pero el dato no fluye.
-            </p>
-            <p style="font-size:var(--text-base);color:var(--text-body);line-height:1.85;font-weight:300;margin-bottom:1rem;">
-              El resultado es una operativa fragmentada: información que se duplica a mano, errores de conciliación, discrepancias entre lo que factura la agencia y lo que cobró, y un equipo que dedica tiempo a tareas de administración que no aportan valor.
-            </p>
-            <p style="font-size:var(--text-base);color:var(--text-body);line-height:1.85;font-weight:300;">
-              Este coste no aparece en ninguna línea del presupuesto, pero está presente en cada expediente mal registrado, en cada cobro que hay que rastrear a mano, en cada informe que tarda horas en prepararse.
-            </p>
+        <div class="frag-symptoms">
+
+          <div class="frag-symptom">
+            <h3>Datos copiados a mano</h3>
+            <p>La reserva llega al GDS, alguien la pasa al programa de gestión y luego al de facturación.</p>
           </div>
 
-          <div>
-            <p style="font-size:var(--text-xs);font-weight:600;color:#5a6a8a;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1.25rem;">Señales de una operativa fragmentada</p>
-            <div style="display:flex;flex-direction:column;gap:0.75rem;">
+          <div class="frag-symptom">
+            <h3>Conciliación laboriosa</h3>
+            <p>Cruzar lo cobrado con lo facturado cada mes consume tiempo porque los registros no están sincronizados.</p>
+          </div>
 
-              <div style="background:var(--light-bg);border-radius:var(--radius-md);padding:1.25rem;border-left:3px solid #e53e3e;">
-                <p style="font-size:var(--text-sm);font-weight:600;color:var(--dark);margin-bottom:0.25rem;">Datos que se copian a mano entre sistemas</p>
-                <p style="font-size:var(--text-sm);color:#5a6a8a;line-height:1.6;margin:0;">La reserva llega al GDS, luego alguien la pasa al programa de gestión, luego al de facturación.</p>
-              </div>
+          <div class="frag-symptom">
+            <h3>Reporting que requiere preparación</h3>
+            <p>Para tener una visión global hay que exportar de varios sistemas y cruzar tablas manualmente.</p>
+          </div>
 
-              <div style="background:var(--light-bg);border-radius:var(--radius-md);padding:1.25rem;border-left:3px solid #e53e3e;">
-                <p style="font-size:var(--text-sm);font-weight:600;color:var(--dark);margin-bottom:0.25rem;">Conciliación bancaria laboriosa</p>
-                <p style="font-size:var(--text-sm);color:#5a6a8a;line-height:1.6;margin:0;">Cruzar lo cobrado con lo facturado consume tiempo cada mes porque los sistemas no están sincronizados.</p>
-              </div>
-
-              <div style="background:var(--light-bg);border-radius:var(--radius-md);padding:1.25rem;border-left:3px solid #e53e3e;">
-                <p style="font-size:var(--text-sm);font-weight:600;color:var(--dark);margin-bottom:0.25rem;">Reporting que requiere consolidación manual</p>
-                <p style="font-size:var(--text-sm);color:#5a6a8a;line-height:1.6;margin:0;">Para obtener una visión global de la agencia hay que exportar de varios sitios y cruzar tablas.</p>
-              </div>
-
-              <div style="background:var(--light-bg);border-radius:var(--radius-md);padding:1.25rem;border-left:3px solid #e53e3e;">
-                <p style="font-size:var(--text-sm);font-weight:600;color:var(--dark);margin-bottom:0.25rem;">Cumplimiento normativo disperso</p>
-                <p style="font-size:var(--text-sm);color:#5a6a8a;line-height:1.6;margin:0;">VERI*FACTU, SII, TicketBAI o Ses Hospedajes gestionados con procesos separados o soluciones externas.</p>
-              </div>
-
-            </div>
+          <div class="frag-symptom">
+            <h3>Cumplimiento normativo disperso</h3>
+            <p>VERI*FACTU, SII, TicketBAI o Ses Hospedajes gestionados con procesos o soluciones separadas.</p>
           </div>
 
         </div>
 
       </div>
     </section>
+    <!-- /PROBLEMA -->
 
 
     <!-- ─────────────────────────────────────────────
-         LA SOLUCIÓN: QUÉ PUEDE CONECTARSE
+         3. FLUJO OPERATIVO VISUAL
+         ───────────────────────────────────────────── -->
+    <section class="section-wrap section-wrap--white" aria-labelledby="flujo-heading">
+      <div class="section-inner">
+
+        <p class="s-eyebrow">Cómo fluye la operativa</p>
+        <h2 class="s-title" id="flujo-heading">
+          De la reserva al reporting,<br>sin interrupciones
+        </h2>
+        <p class="s-sub" style="max-width:560px;">
+          En el ecosistema Orbis, cada paso alimenta al siguiente. El dato no se copia: fluye.
+        </p>
+
+        <div class="op-flow" role="list" aria-label="Flujo operativo integrado">
+
+          <div class="op-step" role="listitem">
+            <div class="op-step-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+            </div>
+            <span class="op-step-label">Reserva</span>
+          </div>
+
+          <div class="op-arrow" aria-hidden="true">›</div>
+
+          <div class="op-step" role="listitem">
+            <div class="op-step-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <span class="op-step-label">Expediente</span>
+          </div>
+
+          <div class="op-arrow" aria-hidden="true">›</div>
+
+          <div class="op-step" role="listitem">
+            <div class="op-step-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </div>
+            <span class="op-step-label">Cobro</span>
+          </div>
+
+          <div class="op-arrow" aria-hidden="true">›</div>
+
+          <div class="op-step" role="listitem">
+            <div class="op-step-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+            </div>
+            <span class="op-step-label">Conciliación</span>
+          </div>
+
+          <div class="op-arrow" aria-hidden="true">›</div>
+
+          <div class="op-step" role="listitem">
+            <div class="op-step-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <span class="op-step-label">Contabilidad</span>
+          </div>
+
+          <div class="op-arrow" aria-hidden="true">›</div>
+
+          <div class="op-step" role="listitem">
+            <div class="op-step-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            </div>
+            <span class="op-step-label">Reporting</span>
+          </div>
+
+          <div class="op-arrow" aria-hidden="true">›</div>
+
+          <div class="op-step" role="listitem">
+            <div class="op-step-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            </div>
+            <span class="op-step-label">Cumplimiento</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- /FLUJO -->
+
+
+    <!-- ─────────────────────────────────────────────
+         4. QUÉ PUEDE CONECTARSE — CARDS CON ICONOS
          ───────────────────────────────────────────── -->
     <section class="section-wrap" aria-labelledby="conectores-heading">
       <div class="section-inner">
 
         <p class="s-eyebrow">Qué puede conectarse</p>
         <h2 class="s-title" id="conectores-heading">
-          Toda la operativa de la agencia,<br>en un único entorno integrado
+          Toda la operativa en un único entorno
         </h2>
-        <p class="s-sub" style="max-width:640px;">
-          Las soluciones Orbis de Pipeline Software cubren las principales áreas operativas de una agencia de viajes, conectadas entre sí desde el primer día.
+        <p class="s-sub" style="max-width:580px;">
+          Las soluciones Orbis cubren y conectan las principales áreas de una agencia desde el primer día.
         </p>
 
-        <div class="connectors-grid">
+        <div class="conn-visual-grid">
 
-          <div class="connector-item">
+          <!-- GDS -->
+          <div class="conn-visual-card">
+            <div class="conn-visual-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
             <h3>Proveedores y GDS</h3>
-            <p>Conexión nativa con los principales sistemas de distribución del sector. Los datos de disponibilidad, tarifas y confirmaciones entran directamente en el expediente.</p>
+            <p>Conexión nativa con Amadeus, Sabre, Galileo y WebBeds. Los datos de disponibilidad y confirmación entran directamente en el expediente.</p>
             <div class="connector-tags">
               <span class="connector-tag">Amadeus</span>
               <span class="connector-tag">Sabre</span>
@@ -152,18 +363,26 @@
             </div>
           </div>
 
-          <div class="connector-item">
+          <!-- Reservas -->
+          <div class="conn-visual-card">
+            <div class="conn-visual-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></svg>
+            </div>
             <h3>Reservas y expedientes</h3>
-            <p>La reserva genera el expediente. El expediente genera la factura. La factura alimenta el cobro y la conciliación. Un flujo sin interrupciones ni duplicidades.</p>
+            <p>La reserva genera el expediente, el expediente la factura, la factura alimenta cobro y conciliación. Un flujo sin interrupciones.</p>
             <div class="connector-tags">
               <span class="connector-tag">Orbis Web</span>
               <span class="connector-tag">Orbis Booking</span>
             </div>
           </div>
 
-          <div class="connector-item">
+          <!-- Web / Portal -->
+          <div class="conn-visual-card">
+            <div class="conn-visual-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
             <h3>Web y portal de cliente</h3>
-            <p>El portal B2B y B2C conecta la capacidad de venta online con la operativa interna. Las reservas entrantes se integran en el mismo flujo de gestión.</p>
+            <p>El portal B2B/B2C conecta la venta online con la operativa interna. Las reservas entrantes entran directamente en el mismo flujo.</p>
             <div class="connector-tags">
               <span class="connector-tag">Orbis Portal</span>
               <span class="connector-tag">B2B</span>
@@ -171,36 +390,65 @@
             </div>
           </div>
 
-          <div class="connector-item">
+          <!-- CRM -->
+          <div class="conn-visual-card">
+            <div class="conn-visual-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>CRM y equipos comerciales</h3>
+            <p>Historial de cliente, expedientes y política de viaje disponibles en el mismo entorno, sin exportaciones ni duplicidades.</p>
+            <div class="connector-tags">
+              <span class="connector-tag">Orbis Corporate</span>
+              <span class="connector-tag">Clientes empresa</span>
+            </div>
+          </div>
+
+          <!-- Pagos -->
+          <div class="conn-visual-card">
+            <div class="conn-visual-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </div>
             <h3>Pagos y cobros</h3>
-            <p>Los cobros mediante enlace de pago quedan registrados en el expediente correspondiente. No hay que cruzar manualmente lo cobrado con lo facturado.</p>
+            <p>Los cobros mediante enlace de pago quedan registrados automáticamente en el expediente. Sin cruzar manualmente lo cobrado con lo facturado.</p>
             <div class="connector-tags">
               <span class="connector-tag">Orbis Pay</span>
               <span class="connector-tag">Enlace de pago</span>
             </div>
           </div>
 
-          <div class="connector-item">
+          <!-- Conciliación -->
+          <div class="conn-visual-card">
+            <div class="conn-visual-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+            </div>
             <h3>Conciliación bancaria</h3>
-            <p>Los movimientos bancarios pueden cruzarse con los cobros registrados en el sistema, reduciendo el tiempo de cierre mensual y los errores de reconciliación.</p>
+            <p>Los movimientos bancarios se cruzan con los cobros del sistema. Menos tiempo en el cierre mensual, menos errores de reconciliación.</p>
             <div class="connector-tags">
               <span class="connector-tag">Cobros</span>
-              <span class="connector-tag">Extractos</span>
+              <span class="connector-tag">Extractos bancarios</span>
             </div>
           </div>
 
-          <div class="connector-item">
+          <!-- Contabilidad -->
+          <div class="conn-visual-card">
+            <div class="conn-visual-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
             <h3>Contabilidad</h3>
-            <p>La información de facturación y cobros está disponible para su volcado contable. Sin reentradas ni exportaciones manuales hacia el sistema contable.</p>
+            <p>Facturación y cobros disponibles para volcado contable sin reentradas manuales ni exportaciones intermedias.</p>
             <div class="connector-tags">
               <span class="connector-tag">Facturas</span>
-              <span class="connector-tag">Apuntes</span>
+              <span class="connector-tag">Apuntes contables</span>
             </div>
           </div>
 
-          <div class="connector-item">
-            <h3>Facturación y cumplimiento normativo</h3>
-            <p>La facturación electrónica y las obligaciones fiscales forman parte del mismo flujo operativo, sin soluciones externas ni procesos separados.</p>
+          <!-- Normativa -->
+          <div class="conn-visual-card">
+            <div class="conn-visual-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            </div>
+            <h3>VERI*FACTU · SII · TicketBAI · Ses Hospedajes</h3>
+            <p>Facturación electrónica y obligaciones fiscales como parte del flujo operativo, sin soluciones externas ni procesos separados.</p>
             <div class="connector-tags">
               <span class="connector-tag">VERI*FACTU</span>
               <span class="connector-tag">SII</span>
@@ -209,19 +457,13 @@
             </div>
           </div>
 
-          <div class="connector-item">
-            <h3>Gestión corporativa y CRM</h3>
-            <p>Los viajeros corporativos, sus políticas de viaje y el histórico de expedientes están disponibles para la gestión de cuentas empresa sin duplicar información.</p>
-            <div class="connector-tags">
-              <span class="connector-tag">Orbis Corporate</span>
-              <span class="connector-tag">TMC</span>
-              <span class="connector-tag">Clientes empresa</span>
+          <!-- Reporting -->
+          <div class="conn-visual-card">
+            <div class="conn-visual-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
             </div>
-          </div>
-
-          <div class="connector-item">
             <h3>Reporting y análisis</h3>
-            <p>Cuando todos los datos están en el mismo entorno, el reporting no requiere consolidación manual. La información está disponible para su análisis sin exportaciones previas.</p>
+            <p>Con los datos en un único entorno, los indicadores de la agencia están disponibles sin consolidaciones manuales ni exportaciones previas.</p>
             <div class="connector-tags">
               <span class="connector-tag">Indicadores</span>
               <span class="connector-tag">Informes</span>
@@ -233,10 +475,11 @@
 
       </div>
     </section>
+    <!-- /CONECTORES -->
 
 
     <!-- ─────────────────────────────────────────────
-         BLOQUE IA: LA INTEGRACIÓN COMO PREREQUISITO
+         5. LA IA NECESITA PROCESOS CONECTADOS
          ───────────────────────────────────────────── -->
     <section class="ai-block" aria-labelledby="ai-integ-heading">
       <div class="ai-block-inner">
@@ -244,112 +487,99 @@
         <div class="ai-block-text">
           <p style="font-size:var(--text-xs);font-weight:600;color:var(--yellow);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;">El siguiente paso</p>
           <h2 id="ai-integ-heading">
-            La IA y la automatización necesitan procesos conectados
+            Antes de automatizar,<br>hay que conectar
           </h2>
           <p>
-            Antes de automatizar, hay que conectar. Cualquier proceso de automatización, análisis de datos o asistencia inteligente parte de la misma base: tener los datos limpios, completos y en un único lugar.
+            Cualquier proceso de automatización o análisis avanzado parte de la misma base: datos limpios, completos y en un único lugar. Sin integración real, la eficiencia se detiene aquí.
           </p>
           <p style="margin-top:1rem;">
-            Las agencias que trabajan con el ecosistema Orbis ya tienen esa base. Los datos de reservas, clientes, pagos y facturación no están dispersos en varios sistemas: están en un entorno común, trazable y actualizado.
+            Las agencias que trabajan con Orbis ya tienen esa base. Los datos de reservas, cobros y facturación no están dispersos: están en un entorno común, trazable y actualizado.
           </p>
         </div>
 
-        <div class="ai-points" aria-label="Ventajas de la integración para la automatización">
+        <div class="ai-points" aria-label="Claves de la integración">
 
           <div class="ai-point">
             <div class="ai-point-dot" aria-hidden="true"></div>
-            <p><strong style="color:#fff;font-weight:600;">Sin integración no hay automatización real.</strong> Puedes automatizar pasos aislados, pero no el flujo completo. La eficiencia real viene de conectar, no de añadir herramientas.</p>
+            <p><strong style="color:#fff;font-weight:600;">Sin integración no hay automatización real.</strong> Puedes automatizar pasos aislados, pero no el flujo completo.</p>
           </div>
 
           <div class="ai-point">
             <div class="ai-point-dot" aria-hidden="true"></div>
-            <p><strong style="color:#fff;font-weight:600;">El dato conectado es el activo más valioso.</strong> Una reserva que alimenta el expediente, la factura, el cobro y el reporting es más valiosa que cuatro registros separados en cuatro sistemas.</p>
+            <p><strong style="color:#fff;font-weight:600;">El dato conectado es el activo más valioso.</strong> Una reserva que alimenta el expediente, la factura, el cobro y el reporting vale más que cuatro registros separados.</p>
           </div>
 
           <div class="ai-point">
             <div class="ai-point-dot" aria-hidden="true"></div>
-            <p><strong style="color:#fff;font-weight:600;">El reporting en tiempo real no requiere preparación.</strong> Cuando los datos están integrados, los indicadores de la agencia están disponibles sin consolidaciones manuales previas.</p>
+            <p><strong style="color:#fff;font-weight:600;">La IA aporta valor cuando trabaja sobre datos fiables.</strong> Modelos, predicciones y asistentes funcionan si el dato de partida es consistente y está unificado.</p>
           </div>
 
           <div class="ai-point">
             <div class="ai-point-dot" aria-hidden="true"></div>
-            <p><strong style="color:#fff;font-weight:600;">Cumplimiento normativo sin fricción adicional.</strong> VERI*FACTU, SII, TicketBAI y Ses Hospedajes como parte del flujo, no como obligaciones gestionadas aparte.</p>
+            <p><strong style="color:#fff;font-weight:600;">Integraciones propias, sin terceros.</strong> El equipo de Pipeline desarrolla y mantiene cada integración. Sin conectores externos, sin capas adicionales de soporte.</p>
           </div>
 
         </div>
 
       </div>
     </section>
+    <!-- /IA -->
 
 
     <!-- ─────────────────────────────────────────────
-         CÓMO TRABAJA PIPELINE EN INTEGRACIÓN
+         6. CÓMO TRABAJA PIPELINE (3 PILARES)
          ───────────────────────────────────────────── -->
-    <section class="section-wrap section-wrap--white" aria-labelledby="como-pipeline-heading">
+    <section class="section-wrap section-wrap--white" aria-labelledby="pipeline-integ-heading">
       <div class="section-inner">
 
         <p class="s-eyebrow">Cómo trabaja Pipeline</p>
-        <h2 class="s-title" id="como-pipeline-heading">
-          Integraciones desarrolladas internamente,<br>no conectores de terceros
+        <h2 class="s-title" id="pipeline-integ-heading">
+          Integraciones propias,<br>no conectores de terceros
         </h2>
 
-        <div class="two-col-grid" style="margin-top:var(--space-lg);">
+        <div class="pipeline-pillars">
 
-          <div>
-            <p style="font-size:var(--text-base);color:var(--text-body);line-height:1.85;font-weight:300;margin-bottom:1rem;">
-              Las integraciones del ecosistema Orbis están desarrolladas y mantenidas directamente por el equipo de Pipeline Software. No se utilizan conectores intermedios de terceros ni plataformas de integración genéricas.
-            </p>
-            <p style="font-size:var(--text-base);color:var(--text-body);line-height:1.85;font-weight:300;margin-bottom:1rem;">
-              Esto significa que cuando hay una actualización en un GDS o un cambio en la normativa fiscal, el equipo de Pipeline lo incorpora al ecosistema. El cliente no gestiona integraciones externas ni depende de proveedores adicionales.
-            </p>
-            <p style="font-size:var(--text-base);color:var(--text-body);line-height:1.85;font-weight:300;">
-              Con más de 35 años de especialización exclusiva en software para agencias de viajes, las integraciones del ecosistema Orbis responden a la operativa real del sector, no a una adaptación genérica.
-            </p>
+          <div class="pipeline-pillar">
+            <h3>Mantenimiento interno</h3>
+            <p>Actualizaciones de GDS, normativa y plataformas de pago se incorporan directamente al ecosistema Orbis. Sin intermediarios, sin dependencias externas.</p>
           </div>
 
-          <div style="display:flex;flex-direction:column;gap:1rem;">
+          <div class="pipeline-pillar">
+            <h3>Soporte técnico directo</h3>
+            <p>El mismo equipo que desarrolla las integraciones atiende las incidencias. Sin capas de soporte externo ni tiempos de escalado.</p>
+          </div>
 
-            <div style="background:var(--light-bg);border-radius:var(--radius-lg);padding:1.5rem;">
-              <p style="font-size:var(--text-sm);font-weight:600;color:var(--dark);margin-bottom:0.35rem;">Mantenimiento propio</p>
-              <p style="font-size:var(--text-sm);color:#5a6a8a;line-height:1.65;margin:0;">Las actualizaciones de GDS, normativa y plataformas de pago se incorporan directamente al ecosistema Orbis sin intermediarios.</p>
-            </div>
-
-            <div style="background:var(--light-bg);border-radius:var(--radius-lg);padding:1.5rem;">
-              <p style="font-size:var(--text-sm);font-weight:600;color:var(--dark);margin-bottom:0.35rem;">Soporte técnico directo</p>
-              <p style="font-size:var(--text-sm);color:#5a6a8a;line-height:1.65;margin:0;">El equipo que desarrolla las integraciones es el mismo que atiende las incidencias. Sin capas de soporte externo.</p>
-            </div>
-
-            <div style="background:var(--light-bg);border-radius:var(--radius-lg);padding:1.5rem;">
-              <p style="font-size:var(--text-sm);font-weight:600;color:var(--dark);margin-bottom:0.35rem;">Integración incremental</p>
-              <p style="font-size:var(--text-sm);color:#5a6a8a;line-height:1.65;margin:0;">No es necesario implantar todos los módulos de golpe. El ecosistema se puede ampliar progresivamente según las necesidades de la agencia.</p>
-            </div>
-
+          <div class="pipeline-pillar">
+            <h3>Implantación incremental</h3>
+            <p>No es necesario implantar todos los módulos de golpe. El ecosistema se amplía progresivamente según las necesidades de la agencia.</p>
           </div>
 
         </div>
 
       </div>
     </section>
+    <!-- /PILARES -->
 
 
     <!-- ─────────────────────────────────────────────
-         CTA FINAL
+         7. CTA FINAL
          ───────────────────────────────────────────── -->
     <section class="cta-section" aria-labelledby="integ-cta-heading">
       <div class="cta-glow" aria-hidden="true"></div>
       <div class="cta-inner">
         <h2 id="integ-cta-heading">
-          ¿Tu agencia trabaja con sistemas <span>que no se comunican</span>?
+          ¿Quieres conectar mejor la operativa <span>de tu agencia</span>?
         </h2>
         <p>
-          Cuéntanos cómo está organizada vuestra operativa. Podemos explicarte qué parte del ecosistema Orbis encajaría en vuestro flujo y qué reduciría el trabajo manual de forma inmediata.
+          Cuéntanos qué sistemas utilizáis hoy y te ayudamos a identificar dónde podéis reducir tareas manuales, duplicidad de datos y fricción operativa.
         </p>
         <div class="cta-btns">
-          <a href="contacto.html" class="btn btn-yellow">Hablar con el equipo técnico</a>
-          <a href="integraciones.html" class="btn-ghost2">Ver integraciones disponibles</a>
+          <a href="contacto.html" class="btn btn-yellow">Hablar sobre integración</a>
+          <a href="productos.html" class="btn-ghost2">Ver soluciones Orbis</a>
         </div>
       </div>
     </section>
+    <!-- /CTA -->
 
 
   </main>
